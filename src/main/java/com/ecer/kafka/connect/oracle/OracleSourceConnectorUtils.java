@@ -115,7 +115,7 @@ public class OracleSourceConnectorUtils{
         for (String tables:tabWithSchemas){
           List<String> tabs = Arrays.asList(tables.split("\\."));
           logMinerSelectWhereStmt+="("+SEG_OWNER_FIELD+"='"+tabs.get(0)+ "'" + (tabs.get(1).equals("*") ? "":" and "+TABLE_NAME_FIELD+"='"+tabs.get(1)+ "'")+") or ";
-        }        
+        }
         logMinerSelectWhereStmt=logMinerSelectWhereStmt.substring(0,logMinerSelectWhereStmt.length()-4)+")";
         logMinerSelectSql+=logMinerSelectWhereStmt;
     }
